@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            padding: 30px;
+        }
+        
+        input {
+            padding: 9px 15px;
+            background: #67C23A;
+            font-size: 12px;
+            border-radius: 3px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        
+        #flex {
+            margin-top: 100px;
+            display: flex;
+        }
+        
+        .div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        
+        .div2 {
+            width: 200px;
+            height: 200px;
+            background: orange;
+        }
+        
+        .div3 {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+        }
+        
+        .div4 {
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+        
+        .div5 {
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+        
+        .div6 {
+            width: 200px;
+            height: 200px;
+            background: indigo;
+        }
+        
+        .div7 {
+            width: 200px;
+            height: 200px;
+            background: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Flex 布局</h1>
+    <input type="submit" value="重置" id="row" onclick="window.location.reload()" />
+    <br/> flex-direction:
+    <input type="submit" value="row" id="row" onclick="changeRow()" />
+    <input type="submit" value="row-reverse" id="row-reverse" onclick="changeRowReverse()" />
+    <input type="submit" value="column" id="column" onclick="changeColumn()" />
+    <input type="submit" value="column-reverse" id="column-reverse" onclick="changeColumnReverse()" />
+    <br/> flex-wrap:
+    <input type="submit" value="nowrap" id="nowrap" onclick="changeNowrap()" />
+    <input type="submit" value="wrap" id="wrap" onclick="changeWrap()" />
+    <input type="submit" value="wrap-reverse" id="wrap-reverse" onclick="changeWrapReverse()" />
+    <br/>justify-content:
+    <input type="submit" value="flex-start" id="flex-start" onclick="changeFlexStart()" />
+    <input type="submit" value="flex-end" id="flex-end" onclick="changeFlexEnd()" />
+    <input type="submit" value="center" id="center" onclick="changeCenter()" />
+    <input type="submit" value="space-between" id="space-between" onclick="changeSpaceBetween()" />
+    <input type="submit" value="space-around" id="space-around" onclick="changeSpaceAround()" />
+    <input type="submit" value="space-evenly" id="space-evenly" onclick="changeSpaceEvenly()" />
+    <br/>align-items:
+    <input type="submit" value="stretch" id="stretch" onclick="changeStretch()" />
+    <input type="submit" value="flex-start" id="align-flex-start" onclick="changeAlignFlexStart()" />
+    <input type="submit" value="flex-end" id="align-flex-end" onclick="changeAlignFlexEnd()" />
+    <input type="submit" value="center" id="align-center" onclick="changeAlignCenter()" />
+    <input type="submit" value="baseline" id="baseline" onclick="changeBaseline()" />
+
+
+    <div id="flex">
+        <div class="div1">
+
+        </div>
+        <div class="div2">
+
+        </div>
+        <div class="div3">
+
+        </div>
+        <div class="div4">
+
+        </div>
+        <div class="div5">
+
+        </div>
+        <!-- <div class="div6">
+
+        </div>
+        <div class="div7">
+
+        </div> -->
+    </div>
+    <script>
+        var Flex = document.getElementById('flex');
+        var Div = document.getElementsByTagName("div");
+
+        function randomPx() {
+            for (let i = 0; i < Div.length; i++) {
+                var random = Math.floor(Math.random() * 200)
+                Div[i].style.height = random + 'px'
+            }
+        }
+
+        function changeRow() {
+            Flex.style.flexDirection = 'row'
+        }
+
+        function changeRowReverse() {
+            Flex.style.flexDirection = 'row-reverse'
+        }
+
+        function changeColumn() {
+            Flex.style.flexDirection = 'column'
+        }
+
+        function changeColumnReverse() {
+            Flex.style.flexDirection = 'column-reverse'
+        }
+
+        function changeNowrap() {
+            Flex.style.flexWrap = 'nowrap'
+        }
+
+        function changeWrap() {
+            Flex.style.flexWrap = 'wrap'
+        }
+
+        function changeWrapReverse() {
+            Flex.style.flexWrap = 'wrap-reverse'
+        }
+
+        function changeFlexStart() {
+            Flex.style.justifyContent = 'flex-start'
+        }
+
+        function changeFlexEnd() {
+            Flex.style.justifyContent = 'flex-end'
+        }
+
+        function changeCenter() {
+            Flex.style.justifyContent = 'center'
+        }
+
+        function changeSpaceBetween() {
+            Flex.style.justifyContent = 'space-between'
+        }
+
+        function changeSpaceAround() {
+            Flex.style.justifyContent = 'space-around'
+        }
+
+        function changeSpaceEvenly() {
+            Flex.style.justifyContent = 'space-evenly'
+        }
+
+        function changeAlignFlexStart() {
+            randomPx()
+            Flex.style.alignItems = 'flex-start'
+        }
+
+        function changeAlignFlexEnd() {
+            randomPx()
+            Flex.style.alignItems = 'flex-end'
+        }
+
+        function changeAlignCenter() {
+            randomPx()
+            Flex.style.alignItems = 'center'
+        }
+
+        function changeBaseline() {
+            randomPx()
+            Flex.style.alignItems = 'baseline'
+        }
+
+        function changeStretch() {
+            randomPx()
+            Flex.style.alignItems = 'stretch'
+        }
+    </script>
+</body>
+
+</html>
